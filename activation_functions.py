@@ -81,7 +81,6 @@ def sigmoid(x, b=1):
             return z / (1 + z)
 
     z = np.array([list(map(helper, x[0]))])
-    # z = 1 / (1 + np.exp(-x * b))
     return z
 
 

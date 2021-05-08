@@ -17,10 +17,10 @@ class Layer:
 
 
 class FCLayer(Layer):
-    def __init__(self, input_size, output_size):
+    def __init__(self, input_size, output_size, diminishing_factor=1):
         super().__init__()
-        self.weights = np.random.rand(input_size, output_size) - 0.5
-        self.bias = np.random.rand(1, output_size) - 0.5
+        self.weights = (np.random.rand(input_size, output_size) - 0.5) / diminishing_factor
+        self.bias = (np.random.rand(1, output_size) - 0.5) / diminishing_factor
 
     def forward_propagate(self, input_data):
         self.input = input_data
